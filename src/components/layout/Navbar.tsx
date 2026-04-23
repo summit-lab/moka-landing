@@ -15,9 +15,16 @@ export function Navbar() {
           boxShadow: '0 2px 24px rgba(59,31,5,0.08), inset 0 1px 0 rgba(255,255,255,0.8)',
         }}
       >
-        <Link href="/" className="flex items-center gap-2 font-black text-lg tracking-tight" style={{ color: '#1a0a00' }}>
-          <span>🐕</span>
-          <span>moka</span>
+        <Link href="/" className="flex items-center gap-2" style={{ color: '#1a0a00' }}>
+          <span className="moka-wave">
+            <img src="/moka-logo.svg" alt="Moka" width={44} height={44} />
+          </span>
+          <span
+            className="text-2xl tracking-tight"
+            style={{ fontFamily: "'Neue Machina', sans-serif", fontWeight: 800, color: '#1a0a00' }}
+          >
+            moka
+          </span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
@@ -25,8 +32,8 @@ export function Navbar() {
             <a
               key={item.href}
               href={item.href}
-              className="text-sm font-semibold transition-colors hover:opacity-70"
-              style={{ color: '#8a4a18' }}
+              className="text-sm font-light transition-colors hover:opacity-60"
+              style={{ fontFamily: 'Archivo', color: '#1a0a00' }}
             >
               {item.label}
             </a>
@@ -36,15 +43,20 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <a
             href="#"
-            className="hidden md:block rounded-xl border px-4 py-2 text-sm font-semibold transition-colors hover:bg-white/90"
-            style={{ borderColor: 'rgba(59,31,5,0.2)', color: '#1a0a00', background: 'rgba(255,255,255,0.6)' }}
+            className="hidden md:block rounded-xl border px-4 py-2 text-sm font-bold transition-colors hover:bg-white/90"
+            style={{
+              fontFamily: 'Archivo',
+              borderColor: 'rgba(59,31,5,0.2)',
+              color: '#1a0a00',
+              background: 'rgba(255,255,255,0.6)',
+            }}
           >
             {SITE_CONFIG.cta.secondary}
           </a>
           <a
             href="#hero"
             className="rounded-xl px-5 py-2 text-sm font-bold text-white transition-opacity hover:opacity-90"
-            style={{ background: '#3b1f05' }}
+            style={{ fontFamily: 'Archivo', background: '#3b1f05' }}
           >
             {SITE_CONFIG.cta.nav}
           </a>

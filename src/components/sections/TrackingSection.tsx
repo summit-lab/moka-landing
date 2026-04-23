@@ -5,21 +5,23 @@ export function TrackingSection() {
   const { tracking } = SITE_CONFIG.sections
 
   return (
-    <section id={tracking.id} className="bg-white px-4 py-20">
-      <div className="mx-auto max-w-5xl space-y-5">
-        <div className="text-center mb-14">
+    <section id={tracking.id} className="bg-white px-4 py-24">
+      <div className="mx-auto max-w-6xl space-y-6">
+        <div className="text-center mb-16">
           <span
-            className="mb-4 inline-block rounded-full border px-5 py-1.5 text-sm font-semibold"
+            className="mb-4 inline-flex items-center gap-1.5 rounded-full border px-4 py-1.5 text-sm font-medium"
             style={{
-              background: 'rgba(255,255,255,0.4)',
-              backdropFilter: 'blur(12px)',
-              borderColor: 'rgba(45,21,7,0.15)',
-              color: '#8a4a18',
+              fontFamily: 'Archivo',
+              fontWeight: 500,
+              background: 'linear-gradient(135deg, rgba(186,224,245,0.45) 0%, rgba(210,235,250,0.3) 100%)',
+              backdropFilter: 'blur(8px)',
+              borderColor: 'rgba(80,140,200,0.4)',
+              color: '#2a6090',
             }}
           >
-            {tracking.badge}
+            <span style={{ fontSize: '0.65rem' }}>✦</span> {tracking.badge}
           </span>
-          <h2 className="text-4xl font-black text-[#1a0a00] md:text-5xl leading-tight">
+          <h2 className="text-4xl font-black md:text-5xl leading-tight" style={{ color: '#3b1f05' }}>
             {tracking.title}
             <br />
             {tracking.titleAccent}
@@ -29,36 +31,40 @@ export function TrackingSection() {
         {tracking.features.map((feature, i) => (
           <div
             key={i}
-            className="grid md:grid-cols-2 gap-8 items-center rounded-2xl border border-zinc-100 bg-white p-8 shadow-sm"
+            className="grid md:grid-cols-[2fr_3fr] gap-10 items-stretch rounded-2xl border border-zinc-100 bg-white px-10 py-10 shadow-sm"
+            style={i % 2 !== 0 ? { direction: 'rtl' } : {}}
           >
-            {i % 2 === 0 ? (
-              <>
-                <div>
-                  <h3 className="text-xl font-extrabold text-[#1a0a00] mb-3 leading-snug">
-                    {feature.title}
-                  </h3>
-                  <p className="text-sm font-semibold leading-relaxed" style={{ color: '#b05a18' }}>
-                    {feature.body}
-                  </p>
-                </div>
-                <AppMockup />
-              </>
-            ) : (
-              <>
-                <AppMockup />
-                <div>
-                  <h3 className="text-xl font-extrabold text-[#1a0a00] mb-3 leading-snug">
-                    {feature.title}
-                  </h3>
-                  <p className="text-sm font-semibold leading-relaxed" style={{ color: '#b05a18' }}>
-                    {feature.body}
-                  </p>
-                </div>
-              </>
-            )}
+            <div className="flex flex-col justify-center" style={{ direction: 'ltr' }}>
+              <h3
+                className="text-2xl font-black mb-4 leading-snug"
+                style={{ fontFamily: "'Archivo', sans-serif", color: '#3b1f05' }}
+              >
+                {feature.title}
+              </h3>
+              <p
+                className="text-base leading-relaxed"
+                style={{ fontFamily: 'Archivo', fontWeight: 400, color: '#3b1f05' }}
+              >
+                {feature.body}
+              </p>
+            </div>
+            <div className="flex flex-col justify-center" style={{ direction: 'ltr' }}>
+              <FeatureImage image={feature.image} alt={feature.title} />
+            </div>
           </div>
         ))}
       </div>
     </section>
+  )
+}
+
+function FeatureImage({ image, alt }: { image: string | null; alt: string }) {
+  return (
+    <div className="w-full h-[300px] rounded-xl border border-zinc-100 shadow-md bg-white flex items-center justify-center overflow-hidden">
+      {image
+        ? <img src={image} alt={alt} className="w-full h-full object-cover object-top" />
+        : <AppMockup />
+      }
+    </div>
   )
 }
