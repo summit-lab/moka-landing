@@ -5,6 +5,20 @@ export const metadata: Metadata = {
   title: 'Moka',
   description:
     'Duplica tu alcance y DMs en Instagram en solo 2hs/sem. Tracking avanzado, espionaje de competidores y producción de contenido con IA.',
+  openGraph: {
+    title: 'Moka — Duplica tu alcance en Instagram',
+    description:
+      'Duplica tu alcance y DMs en Instagram en solo 2hs/sem. Tracking avanzado, espionaje de competidores y producción de contenido con IA.',
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Moka — Duplica tu alcance en Instagram',
+    description:
+      'Duplica tu alcance y DMs en Instagram en solo 2hs/sem.',
+    images: ['/og-image.png'],
+  },
 }
 
 export default function RootLayout({
