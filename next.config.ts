@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   allowedDevOrigins: ['192.168.0.*', '192.168.1.*'],
+  turbopack: {},
   webpack: (config, { dev }) => {
     if (dev) {
       // OneDrive / network drives break inotify-based file watching.
