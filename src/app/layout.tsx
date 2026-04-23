@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.usemoka.io'),
   title: 'Moka',
   description:
     'Duplica tu alcance y DMs en Instagram en solo 2hs/sem. Tracking avanzado, espionaje de competidores y producción de contenido con IA.',
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
     title: 'Moka — Duplica tu alcance en Instagram',
     description:
       'Duplica tu alcance y DMs en Instagram en solo 2hs/sem. Tracking avanzado, espionaje de competidores y producción de contenido con IA.',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/og-image.png', width: 2172, height: 724 }],
     type: 'website',
   },
   twitter: {
