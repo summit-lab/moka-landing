@@ -19,7 +19,7 @@ export function HeroSection() {
 
       <div className="relative z-10 mx-auto max-w-3xl pt-28">
         <h1
-          className="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight"
+          className="text-4xl md:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight"
           style={{ color: '#3b1f05' }}
         >
           {SITE_CONFIG.tagline}

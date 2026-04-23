@@ -5,9 +5,9 @@ export function TrackingSection() {
   const { tracking } = SITE_CONFIG.sections
 
   return (
-    <section id={tracking.id} className="bg-white px-4 py-24">
-      <div className="mx-auto max-w-6xl space-y-6">
-        <div className="text-center mb-16">
+    <section id={tracking.id} className="bg-white px-4 py-12 md:py-24">
+      <div className="mx-auto max-w-6xl space-y-4 md:space-y-6">
+        <div className="text-center mb-8 md:mb-16">
           <span
             className="mb-4 inline-flex items-center gap-1.5 rounded-full border px-4 py-1.5 text-sm font-medium"
             style={{
@@ -31,7 +31,7 @@ export function TrackingSection() {
         {tracking.features.map((feature, i) => (
           <div
             key={i}
-            className="grid md:grid-cols-[2fr_3fr] gap-10 items-stretch rounded-2xl border border-zinc-100 bg-white px-10 py-10 shadow-sm"
+            className="grid md:grid-cols-[2fr_3fr] gap-6 md:gap-10 items-stretch rounded-2xl border border-zinc-100 bg-white px-5 py-6 md:px-10 md:py-10 shadow-sm"
             style={i % 2 !== 0 ? { direction: 'rtl' } : {}}
           >
             <div className="flex flex-col justify-center" style={{ direction: 'ltr' }}>
@@ -60,7 +60,7 @@ export function TrackingSection() {
 
 function FeatureImage({ image, alt }: { image: string | null; alt: string }) {
   return (
-    <div className="w-full h-[300px] rounded-xl border border-zinc-100 shadow-md bg-white flex items-center justify-center overflow-hidden">
+    <div className="w-full h-[220px] md:h-[300px] rounded-xl border border-zinc-100 shadow-md bg-white flex items-center justify-center overflow-hidden">
       {image
         ? <img src={image} alt={alt} className="w-full h-full object-cover object-top" />
         : <AppMockup />

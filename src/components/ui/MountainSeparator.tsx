@@ -4,7 +4,7 @@ interface MountainSeparatorProps {
 
 export function MountainSeparator({ image }: MountainSeparatorProps) {
   return (
-    <div className="relative w-full h-[680px] overflow-hidden">
+    <div className="relative w-full h-[320px] md:h-[680px] overflow-hidden">
       <img
         src={image}
         alt=""
