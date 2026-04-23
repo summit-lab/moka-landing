@@ -27,7 +27,7 @@ export function SpySection() {
             >
               <span style={{ fontSize: '0.65rem' }}>✦</span> {spy.badge}
             </span>
-            <h2 className="text-4xl font-black md:text-5xl leading-[1.05]" style={{ color: '#3b1f05' }}>
+            <h2 className="text-4xl font-black md:text-5xl leading-[0.9]" style={{ color: '#3b1f05' }}>
               {spy.title} {spy.titleAccent}
             </h2>
           </AnimateIn>
