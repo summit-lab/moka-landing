@@ -32,9 +32,7 @@ export default function ThankYouPage() {
       <main
         className="min-h-screen flex flex-col items-center justify-center px-4 pb-16"
         style={{
-          backgroundImage: 'url(/confirmacion-bg.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center center',
+          background: 'linear-gradient(160deg, #e8f4fd 0%, #f5f0eb 50%, #fff 100%)',
         }}
       >
         <div className="absolute inset-0 pointer-events-none" style={{ background: 'rgba(255,255,255,0.50)' }} />

@@ -132,6 +132,67 @@ h1, h2, h3, h4, h5, h6 {
   animation: textPulse 3s ease-in-out infinite;
 }
 
+/* ─── CTA button — shimmer high-ticket ─── */
+.btn-cta {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.28s ease !important;
+}
+
+.btn-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    108deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.22) 50%,
+    transparent 70%
+  );
+  transform: translateX(-120%) skewX(-12deg);
+}
+
+.btn-cta:hover {
+  transform: translateY(-2px) scale(1.025);
+  box-shadow: 0 14px 44px rgba(59, 31, 5, 0.42) !important;
+}
+
+.btn-cta:hover::before {
+  animation: btn-shimmer 0.52s ease forwards;
+}
+
+@keyframes btn-shimmer {
+  to { transform: translateX(320%) skewX(-12deg); }
+}
+
+/* texto deslizante + perro */
+.btn-content {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.btn-label {
+  display: block;
+  white-space: nowrap;
+  transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-label-clone {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  transform: translateY(110%);
+  transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-cta:hover .btn-label       { transform: translateY(-110%); }
+.btn-cta:hover .btn-label-clone { transform: translateY(0); }
+
 /* ─── Punto rojo parpadeante ─── */
 @keyframes blink {
   0%, 100% { opacity: 1; }

@@ -83,10 +83,13 @@ export function Navbar() {
             </a>
             <a
               href="/demo"
-              className="rounded-xl px-5 py-2 text-sm font-bold text-white transition-opacity hover:opacity-90"
+              className="btn-cta rounded-xl px-5 py-2 text-sm font-bold text-white"
               style={{ fontFamily: 'Archivo', background: '#3b1f05' }}
             >
-              {SITE_CONFIG.cta.nav}
+              <span className="btn-content">
+                <span className="btn-label">{SITE_CONFIG.cta.nav}</span>
+                <span className="btn-label-clone" aria-hidden="true">{SITE_CONFIG.cta.nav}</span>
+              </span>
             </a>
           </div>
         </nav>

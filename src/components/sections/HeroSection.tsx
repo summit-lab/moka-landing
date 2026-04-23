@@ -32,10 +32,13 @@ export function HeroSection() {
         <AnimateIn delay={150} className="mt-10 flex flex-col items-center gap-4">
           <a
             href="/demo"
-            className="rounded-xl px-8 py-4 text-base font-bold text-white transition-opacity hover:opacity-90"
+            className="btn-cta rounded-xl px-8 py-4 text-base font-bold text-white"
             style={{ fontFamily: 'Archivo', background: '#3b1f05' }}
           >
-            {SITE_CONFIG.cta.primary}
+            <span className="btn-content">
+              <span className="btn-label">{SITE_CONFIG.cta.primary}</span>
+              <span className="btn-label-clone" aria-hidden="true">{SITE_CONFIG.cta.primary}</span>
+            </span>
           </a>
           <p
             className="flex items-center text-sm font-light"

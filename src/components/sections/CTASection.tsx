@@ -6,7 +6,7 @@ export function CTASection() {
     <section className="bg-white px-4 py-12 md:py-16">
       <AnimateIn>
         <div
-          className="mx-auto relative overflow-hidden rounded-3xl min-h-[420px] md:min-h-[520px] flex items-center justify-center"
+          className="mx-auto relative overflow-hidden rounded-3xl min-h-[560px] md:min-h-[520px] flex items-center justify-center"
           style={{
             maxWidth: '80rem',
             border: '1px solid rgba(59,31,5,0.10)',
@@ -17,6 +17,7 @@ export function CTASection() {
             src="/imagen-cta.png"
             alt=""
             className="absolute inset-0 w-full h-full object-cover"
+            style={{ objectPosition: 'center bottom' }}
           />
 
           <div className="relative z-10 flex flex-col items-center text-center max-w-xs md:max-w-sm px-8 py-16">
@@ -34,10 +35,13 @@ export function CTASection() {
             </p>
             <a
               href="/demo"
-              className="mt-6 inline-flex items-center gap-2 rounded-2xl px-7 py-3.5 text-sm font-bold text-white transition-opacity hover:opacity-90"
+              className="btn-cta mt-6 inline-flex items-center rounded-2xl px-7 py-3.5 text-sm font-bold text-white"
               style={{ fontFamily: 'Archivo', background: '#3b1f05' }}
             >
-              {SITE_CONFIG.cta.primary} →
+              <span className="btn-content">
+                <span className="btn-label">{SITE_CONFIG.cta.primary} →</span>
+                <span className="btn-label-clone" aria-hidden="true">{SITE_CONFIG.cta.primary} →</span>
+              </span>
             </a>
           </div>
         </div>
