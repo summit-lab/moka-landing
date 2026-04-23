@@ -87,6 +87,51 @@ h1, h2, h3, h4, h5, h6 {
   animation-play-state: running;
 }
 
+/* ─── Scroll reveal ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-fade {
+  opacity: 0;
+  transition: opacity 0.65s ease;
+  will-change: opacity;
+}
+
+.reveal-fade.visible {
+  opacity: 1;
+}
+
+/* ─── Card hover lift ─── */
+.card-hover {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(59,31,5,0.13), 0 2px 8px rgba(59,31,5,0.07) !important;
+}
+
+/* ─── CTA subtitle pulse ─── */
+@keyframes textPulse {
+  0%, 100% { opacity: 0.85; }
+  50%       { opacity: 1; }
+}
+
+.text-pulse {
+  animation: textPulse 3s ease-in-out infinite;
+}
+
 /* ─── Punto rojo parpadeante ─── */
 @keyframes blink {
   0%, 100% { opacity: 1; }

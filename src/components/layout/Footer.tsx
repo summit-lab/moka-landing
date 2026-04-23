@@ -3,8 +3,9 @@ import { SITE_CONFIG } from '@/constants/SITE_CONFIG'
 
 export function Footer() {
   return (
-    <footer className="border-t border-zinc-100 bg-white px-4 py-12">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 md:flex-row">
+    <footer className="bg-white border-t border-zinc-100 overflow-hidden">
+      {/* Main content */}
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-4 py-12 md:flex-row">
         <Link href="/" className="flex items-center gap-3">
           <span className="moka-wave">
             <img src="/moka-logo.svg" alt="Moka" width={52} height={52} />
@@ -33,6 +34,15 @@ export function Footer() {
         <p className="text-sm" style={{ fontFamily: 'Archivo', color: '#9a7060' }}>
           © 2026 Moka. Todos los derechos reservados.
         </p>
+      </div>
+
+      {/* Footer image — full width, shows completely */}
+      <div className="w-full">
+        <img
+          src="/moka-footer.png"
+          alt=""
+          className="w-full block"
+        />
       </div>
     </footer>
   )

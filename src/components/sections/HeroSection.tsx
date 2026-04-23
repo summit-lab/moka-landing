@@ -1,4 +1,6 @@
 import { SITE_CONFIG } from '@/constants/SITE_CONFIG'
+import { SocialProofNumber } from '@/components/ui/SocialProofNumber'
+import { AnimateIn } from '@/components/ui/AnimateIn'
 
 export function HeroSection() {
   return (
@@ -8,7 +10,7 @@ export function HeroSection() {
       style={{
         backgroundImage: 'url(/hero-bg.png)',
         backgroundSize: 'cover',
-        backgroundPosition: 'center center',
+        backgroundPosition: 'center top',
       }}
     >
       <div className="absolute inset-0 bg-white/30 pointer-events-none" />
@@ -18,16 +20,18 @@ export function HeroSection() {
       />
 
       <div className="relative z-10 mx-auto max-w-3xl pt-28">
-        <h1
-          className="text-4xl md:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight"
-          style={{ color: '#3b1f05' }}
-        >
-          {SITE_CONFIG.tagline}
-        </h1>
+        <AnimateIn>
+          <h1
+            className="text-4xl md:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight"
+            style={{ color: '#3b1f05' }}
+          >
+            {SITE_CONFIG.tagline}
+          </h1>
+        </AnimateIn>
 
-        <div className="mt-10 flex flex-col items-center gap-4">
+        <AnimateIn delay={150} className="mt-10 flex flex-col items-center gap-4">
           <a
-            href="#"
+            href="/demo"
             className="rounded-xl px-8 py-4 text-base font-bold text-white transition-opacity hover:opacity-90"
             style={{ fontFamily: 'Archivo', background: '#3b1f05' }}
           >
@@ -38,9 +42,9 @@ export function HeroSection() {
             style={{ fontFamily: 'Archivo', color: '#3b1f05' }}
           >
             <span className="dot-blink" />
-            {SITE_CONFIG.socialProof}
+            <SocialProofNumber /> negocios agendaron una llamada esta semana
           </p>
-        </div>
+        </AnimateIn>
       </div>
     </section>
   )

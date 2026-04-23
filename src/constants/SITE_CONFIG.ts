@@ -48,7 +48,7 @@ export const SITE_CONFIG = {
         {
           title: 'Identifica sus formatos y ángulos ganadores, en automático.',
           body: 'Solo decile a Moka quiénes son tus competidores... Y va a analizar cada uno de sus videos, métricas, guion, formatos... todo. 100% automático.',
-          image: '/screenshots/screenshot-identifica.jpg',
+          image: '/screenshots/screenshot-identifica.png',
         },
         {
           title: 'Compará y analizá tus métricas vs. las de tus competidores.',
