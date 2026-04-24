@@ -23,7 +23,7 @@ export function TrackingSection() {
           >
             <span style={{ fontSize: '0.65rem' }}>✦</span> {tracking.badge}
           </span>
-          <h2 className="text-4xl font-black md:text-5xl leading-[0.9]" style={{ color: '#3b1f05' }}>
+          <h2 className="text-2xl font-black md:text-5xl leading-[0.9]" style={{ color: '#3b1f05' }}>
             {tracking.title}
             <br />
             {tracking.titleAccent}
@@ -43,7 +43,7 @@ export function TrackingSection() {
             >
               <div className="flex flex-col justify-center" style={{ direction: 'ltr' }}>
                 <h3
-                  className="text-2xl font-black mb-4 leading-snug"
+                  className="text-xl font-black mb-4 leading-tight md:text-2xl"
                   style={{ fontFamily: "'Archivo', sans-serif", color: '#3b1f05' }}
                 >
                   {feature.title}
