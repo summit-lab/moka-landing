@@ -2,10 +2,11 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { SITE_CONFIG } from '@/constants/SITE_CONFIG'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
+  const { lang, t, toggleLang } = useLanguage()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,7 +57,7 @@ export function Navbar() {
           </Link>
 
           <div className="hidden md:flex items-center gap-1">
-            {SITE_CONFIG.nav.map((item) => (
+            {t.nav.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
@@ -69,6 +70,38 @@ export function Navbar() {
           </div>
 
           <div className="flex items-center gap-3">
+            {/* Language toggle */}
+            <button
+              onClick={toggleLang}
+              className="hidden md:flex items-center overflow-hidden rounded-lg text-xs font-bold transition-all"
+              style={{
+                fontFamily: 'Archivo',
+                border: '1px solid rgba(59,31,5,0.18)',
+              }}
+              aria-label="Toggle language"
+            >
+              <span
+                style={{
+                  padding: '4px 9px',
+                  background: lang === 'es' ? '#3b1f05' : 'transparent',
+                  color: lang === 'es' ? '#fff' : '#3b1f05',
+                  transition: 'background 0.2s, color 0.2s',
+                }}
+              >
+                ES
+              </span>
+              <span
+                style={{
+                  padding: '4px 9px',
+                  background: lang === 'en' ? '#3b1f05' : 'transparent',
+                  color: lang === 'en' ? '#fff' : '#3b1f05',
+                  transition: 'background 0.2s, color 0.2s',
+                }}
+              >
+                EN
+              </span>
+            </button>
+
             <a
               href="#"
               className="hidden md:block rounded-xl border px-4 py-2 text-sm font-bold transition-colors hover:bg-white/90"
@@ -79,7 +112,7 @@ export function Navbar() {
                 background: 'rgba(255,255,255,0.6)',
               }}
             >
-              {SITE_CONFIG.cta.secondary}
+              {t.cta.secondary}
             </a>
             <a
               href="/demo"
@@ -87,8 +120,8 @@ export function Navbar() {
               style={{ fontFamily: 'Archivo', background: '#3b1f05' }}
             >
               <span className="btn-content">
-                <span className="btn-label">{SITE_CONFIG.cta.nav}</span>
-                <span className="btn-label-clone" aria-hidden="true">{SITE_CONFIG.cta.nav}</span>
+                <span className="btn-label">{t.cta.nav}</span>
+                <span className="btn-label-clone" aria-hidden="true">{t.cta.nav}</span>
               </span>
             </a>
           </div>

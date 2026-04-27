@@ -1,7 +1,11 @@
+'use client'
+
 import Link from 'next/link'
-import { SITE_CONFIG } from '@/constants/SITE_CONFIG'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export function Footer() {
+  const { t } = useLanguage()
+
   return (
     <footer className="bg-white border-t border-zinc-100 overflow-hidden">
       {/* Main content */}
@@ -19,7 +23,7 @@ export function Footer() {
         </Link>
 
         <nav className="flex gap-8">
-          {SITE_CONFIG.nav.map((item) => (
+          {t.nav.map((item) => (
             <a
               key={item.href}
               href={item.href}
@@ -32,7 +36,7 @@ export function Footer() {
         </nav>
 
         <p className="text-sm" style={{ fontFamily: 'Archivo', color: '#9a7060' }}>
-          © 2026 Moka. Todos los derechos reservados.
+          {t.footer.copyright}
         </p>
       </div>
 

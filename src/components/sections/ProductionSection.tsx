@@ -1,10 +1,13 @@
+'use client'
+
+import { useLanguage } from '@/contexts/LanguageContext'
 import { AppMockup } from '@/components/ui/AppMockup'
 import { MountainSeparator } from '@/components/ui/MountainSeparator'
 import { AnimateIn } from '@/components/ui/AnimateIn'
-import { SITE_CONFIG } from '@/constants/SITE_CONFIG'
 
 export function ProductionSection() {
-  const { production } = SITE_CONFIG.sections
+  const { t } = useLanguage()
+  const { production } = t.sections
 
   return (
     <>

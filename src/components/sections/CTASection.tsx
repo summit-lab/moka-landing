@@ -1,7 +1,12 @@
-import { SITE_CONFIG } from '@/constants/SITE_CONFIG'
+'use client'
+
+import { useLanguage } from '@/contexts/LanguageContext'
 import { AnimateIn } from '@/components/ui/AnimateIn'
 
 export function CTASection() {
+  const { t } = useLanguage()
+  const { ctaSection, cta } = t
+
   return (
     <section className="bg-white px-4 py-12 md:py-16">
       <AnimateIn>
@@ -23,15 +28,15 @@ export function CTASection() {
           <div className="relative z-10 flex flex-col items-center text-center max-w-xs md:max-w-sm px-8 py-16">
             <h2
               className="text-3xl md:text-4xl lg:text-5xl font-black leading-[1.05] tracking-tight"
-              style={{ color: '#3b1f05', fontFamily: "'Neue Machina', sans-serif" }}
+              style={{ color: '#3b1f05', fontFamily: "'Neue Machina', sans-serif", whiteSpace: 'pre-line' }}
             >
-              Agendá tu<br />llamada
+              {ctaSection.title}
             </h2>
             <p
               className="mt-4 text-sm md:text-base leading-relaxed text-pulse"
               style={{ color: '#3b1f05', fontFamily: 'Archivo', fontWeight: 500 }}
             >
-              Hablamos 30 minutos, analizamos tu cuenta y te mostramos exactamente cómo podés escalar tu marca personal.
+              {ctaSection.body}
             </p>
             <a
               href="/demo"
@@ -39,8 +44,8 @@ export function CTASection() {
               style={{ fontFamily: 'Archivo', background: '#3b1f05' }}
             >
               <span className="btn-content">
-                <span className="btn-label">{SITE_CONFIG.cta.primary} →</span>
-                <span className="btn-label-clone" aria-hidden="true">{SITE_CONFIG.cta.primary} →</span>
+                <span className="btn-label">{cta.primary} →</span>
+                <span className="btn-label-clone" aria-hidden="true">{cta.primary} →</span>
               </span>
             </a>
           </div>

@@ -1,9 +1,12 @@
+'use client'
+
+import { useLanguage } from '@/contexts/LanguageContext'
 import { AppMockup } from '@/components/ui/AppMockup'
 import { AnimateIn } from '@/components/ui/AnimateIn'
-import { SITE_CONFIG } from '@/constants/SITE_CONFIG'
 
 export function TrackingSection() {
-  const { tracking } = SITE_CONFIG.sections
+  const { t } = useLanguage()
+  const { tracking } = t.sections
 
   return (
     <section id={tracking.id} className="bg-white px-4 py-12 md:py-24">

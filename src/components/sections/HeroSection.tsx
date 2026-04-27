@@ -1,8 +1,12 @@
-import { SITE_CONFIG } from '@/constants/SITE_CONFIG'
+'use client'
+
+import { useLanguage } from '@/contexts/LanguageContext'
 import { SocialProofNumber } from '@/components/ui/SocialProofNumber'
 import { AnimateIn } from '@/components/ui/AnimateIn'
 
 export function HeroSection() {
+  const { t } = useLanguage()
+
   return (
     <section
       id="hero"
@@ -25,7 +29,7 @@ export function HeroSection() {
             className="text-3xl md:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight"
             style={{ color: '#3b1f05' }}
           >
-            {SITE_CONFIG.tagline}
+            {t.tagline}
           </h1>
         </AnimateIn>
 
@@ -36,8 +40,8 @@ export function HeroSection() {
             style={{ fontFamily: 'Archivo', background: '#3b1f05' }}
           >
             <span className="btn-content">
-              <span className="btn-label">{SITE_CONFIG.cta.primary}</span>
-              <span className="btn-label-clone" aria-hidden="true">{SITE_CONFIG.cta.primary}</span>
+              <span className="btn-label">{t.cta.primary}</span>
+              <span className="btn-label-clone" aria-hidden="true">{t.cta.primary}</span>
             </span>
           </a>
           <p
@@ -45,7 +49,7 @@ export function HeroSection() {
             style={{ fontFamily: 'Archivo', color: '#3b1f05' }}
           >
             <span className="dot-blink" />
-            <SocialProofNumber /> negocios agendaron una llamada esta semana
+            <SocialProofNumber /> {t.socialProofSuffix}
           </p>
         </AnimateIn>
       </div>
