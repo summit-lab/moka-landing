@@ -187,4 +187,4 @@ export const TRANSLATIONS = {
   },
 } as const
 
-export type Translations = typeof TRANSLATIONS.es
+export type Translations = typeof TRANSLATIONS[Lang]
