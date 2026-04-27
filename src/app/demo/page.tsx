@@ -1,4 +1,3 @@
-import Script from 'next/script'
 import { Navbar } from '@/components/layout/Navbar'
 import { IClosedWatcher } from '@/components/ui/IClosedWatcher'
 import type { Metadata } from 'next'
@@ -38,6 +37,8 @@ const benefits = [
 export default function DemoPage() {
   return (
     <>
+      <link rel="preconnect" href="https://app.iclosed.io" />
+      <link rel="dns-prefetch" href="https://app.iclosed.io" />
       <Navbar />
 
       <main
@@ -84,16 +85,15 @@ export default function DemoPage() {
                 </ul>
               </div>
 
-              {/* Right column — widget, no extra border/bg to avoid fake white borders */}
+              {/* Right column — direct iframe for instant load */}
               <div
                 className="overflow-hidden rounded-2xl"
                 style={{ boxShadow: '0 4px 40px rgba(59,31,5,0.12)' }}
               >
-                <div
-                  className="iclosed-widget"
-                  data-url="https://app.iclosed.io/e/arcadia/demo-moka"
+                <iframe
+                  src="https://app.iclosed.io/e/arcadia/demo-moka"
                   title="Demo de Moka"
-                  style={{ width: '100%', height: '860px' }}
+                  style={{ width: '100%', height: '860px', border: 'none', display: 'block' }}
                 />
               </div>
 
@@ -103,7 +103,6 @@ export default function DemoPage() {
       </main>
 
       <IClosedWatcher />
-      <Script src="https://app.iclosed.io/assets/widget.js" strategy="afterInteractive" />
     </>
   )
 }
