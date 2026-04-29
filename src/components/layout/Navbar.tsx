@@ -103,7 +103,7 @@ export function Navbar() {
             </button>
 
             <a
-              href="#"
+              href="https://app.usemoka.io"
               className="hidden md:block rounded-xl border px-4 py-2 text-sm font-bold transition-colors hover:bg-white/90"
               style={{
                 fontFamily: 'Archivo',
