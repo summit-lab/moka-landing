@@ -1,9 +1,12 @@
 import { Navbar } from '@/components/layout/Navbar'
+import Link from 'next/link'
+import Image from 'next/image'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: '¡Llamada agendada! — Moka',
   description: 'Gracias por agendar tu demo con Moka. Nos vemos pronto.',
+  robots: { index: false, follow: false },
 }
 
 const steps = [
@@ -35,7 +38,7 @@ export default async function ConfirmacionPage({ searchParams }: { searchParams:
       <Navbar />
 
       <main
-        className="min-h-screen flex flex-col items-center justify-center px-4 pb-16"
+        className="relative min-h-screen flex flex-col items-center justify-center px-4 pb-16"
         style={{
           background: 'linear-gradient(160deg, #e8f4fd 0%, #f5f0eb 50%, #fff 100%)',
         }}
@@ -45,7 +48,7 @@ export default async function ConfirmacionPage({ searchParams }: { searchParams:
         <div className="relative z-10 w-full max-w-2xl flex flex-col items-center text-center pt-24">
 
           <span className="moka-wave mb-6" style={{ display: 'inline-block' }}>
-            <img src="/moka-logo.svg" alt="Moka" width={72} height={72} />
+            <Image src="/moka-logo.svg" alt="Moka" width={72} height={72} />
           </span>
 
           <h1
@@ -87,13 +90,13 @@ export default async function ConfirmacionPage({ searchParams }: { searchParams:
             ))}
           </div>
 
-          <a
+          <Link
             href="/"
             className="mt-10 inline-flex items-center gap-2 rounded-xl px-7 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90"
             style={{ fontFamily: 'Archivo', background: '#3b1f05' }}
           >
             ← Volver al inicio
-          </a>
+          </Link>
         </div>
       </main>
     </>

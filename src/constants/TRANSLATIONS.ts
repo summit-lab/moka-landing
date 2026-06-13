@@ -13,6 +13,7 @@ export const TRANSLATIONS = {
       { label: 'Tracking', href: '#tracking' },
       { label: 'Espía', href: '#espia' },
       { label: 'Producción', href: '#produccion' },
+      { label: 'Precios', href: '#precios' },
     ],
     ctaSection: {
       title: 'Agendá tu\nllamada',
@@ -20,6 +21,45 @@ export const TRANSLATIONS = {
     },
     footer: {
       copyright: '© 2026 Moka. Todos los derechos reservados.',
+    },
+    pricing: {
+      id: 'precios',
+      badge: 'Precios',
+      title: 'Un solo plan.',
+      titleAccent: 'Elegí cómo pagarlo.',
+      subtitle: 'Acceso completo a Moka. Elegí la facturación que mejor te sirva. Precios en USD.',
+      includesTitle: 'Todo incluido:',
+      includes: [
+        'Tracking avanzado de todas tus métricas',
+        'Espionaje automático de tus competidores',
+        'Producción de contenido con IA y chat ilimitado',
+      ],
+      plans: [
+        {
+          name: 'Mensual',
+          price: '$997',
+          period: '/mes',
+          note: 'Facturado mes a mes. Cancelás cuando quieras.',
+          highlight: false,
+          badge: '',
+        },
+        {
+          name: '6 Meses',
+          price: '$2.997',
+          period: 'pago único',
+          note: 'Equivale a $499/mes · Ahorrás 50%',
+          highlight: false,
+          badge: '',
+        },
+        {
+          name: 'Anual',
+          price: '$4.997',
+          period: 'pago único',
+          note: 'Equivale a $416/mes · Ahorrás 58%',
+          highlight: true,
+          badge: 'Mejor valor',
+        },
+      ],
     },
     sections: {
       tracking: {
@@ -105,6 +145,7 @@ export const TRANSLATIONS = {
       { label: 'Tracking', href: '#tracking' },
       { label: 'Spy', href: '#espia' },
       { label: 'Production', href: '#produccion' },
+      { label: 'Pricing', href: '#precios' },
     ],
     ctaSection: {
       title: 'Book your\ncall',
@@ -112,6 +153,45 @@ export const TRANSLATIONS = {
     },
     footer: {
       copyright: '© 2026 Moka. All rights reserved.',
+    },
+    pricing: {
+      id: 'precios',
+      badge: 'Pricing',
+      title: 'One plan.',
+      titleAccent: 'Choose how you pay.',
+      subtitle: 'Full access to Moka. Pick the billing that works best for you. Prices in USD.',
+      includesTitle: 'Everything included:',
+      includes: [
+        'Advanced tracking of all your metrics',
+        'Automatic spying on your competitors',
+        'AI content production with unlimited chat',
+      ],
+      plans: [
+        {
+          name: 'Monthly',
+          price: '$997',
+          period: '/mo',
+          note: 'Billed month to month. Cancel anytime.',
+          highlight: false,
+          badge: '',
+        },
+        {
+          name: '6 Months',
+          price: '$2,997',
+          period: 'one-time',
+          note: 'Just $499/mo · Save 50%',
+          highlight: false,
+          badge: '',
+        },
+        {
+          name: 'Annual',
+          price: '$4,997',
+          period: 'one-time',
+          note: 'Just $416/mo · Save 58%',
+          highlight: true,
+          badge: 'Best value',
+        },
+      ],
     },
     sections: {
       tracking: {

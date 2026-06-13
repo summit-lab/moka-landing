@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 interface MountainSeparatorProps {
   image: string
   position?: string
@@ -6,10 +8,12 @@ interface MountainSeparatorProps {
 export function MountainSeparator({ image, position = '50% 65%' }: MountainSeparatorProps) {
   return (
     <div className="relative w-full h-[320px] md:h-[680px] overflow-hidden">
-      <img
+      <Image
         src={image}
         alt=""
-        className="w-full h-full object-cover"
+        fill
+        sizes="100vw"
+        className="object-cover"
         style={{ objectPosition: position }}
         aria-hidden
       />

@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+import Image from 'next/image'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { AnimateIn } from '@/components/ui/AnimateIn'
 
@@ -18,10 +20,12 @@ export function CTASection() {
             boxShadow: '0 2px 16px rgba(59,31,5,0.09), 0 1px 3px rgba(59,31,5,0.06)',
           }}
         >
-          <img
+          <Image
             src="/imagen-cta.png"
             alt=""
-            className="absolute inset-0 w-full h-full object-cover"
+            fill
+            sizes="(min-width: 1280px) 80rem, 100vw"
+            className="object-cover"
             style={{ objectPosition: 'center bottom' }}
           />
 
@@ -38,7 +42,7 @@ export function CTASection() {
             >
               {ctaSection.body}
             </p>
-            <a
+            <Link
               href="/demo"
               className="btn-cta mt-6 inline-flex items-center rounded-2xl px-7 py-3.5 text-sm font-bold text-white"
               style={{ fontFamily: 'Archivo', background: '#3b1f05' }}
@@ -47,7 +51,7 @@ export function CTASection() {
                 <span className="btn-label">{cta.primary} →</span>
                 <span className="btn-label-clone" aria-hidden="true">{cta.primary} →</span>
               </span>
-            </a>
+            </Link>
           </div>
         </div>
       </AnimateIn>

@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useContext, useState, useEffect, type ReactNode } from 'react'
+import { createContext, useContext, useSyncExternalStore, type ReactNode } from 'react'
 import { TRANSLATIONS, type Lang, type Translations } from '@/constants/TRANSLATIONS'
 
 type LanguageCtx = {
@@ -11,20 +11,37 @@ type LanguageCtx = {
 
 const LanguageContext = createContext<LanguageCtx | null>(null)
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLang] = useState<Lang>('es')
+const STORAGE_KEY = 'moka-lang'
+const LANG_EVENT = 'moka-lang-change'
 
-  useEffect(() => {
-    const saved = localStorage.getItem('moka-lang') as Lang | null
-    if (saved === 'en' || saved === 'es') setLang(saved)
-  }, [])
+function subscribe(callback: () => void) {
+  window.addEventListener(LANG_EVENT, callback)
+  window.addEventListener('storage', callback)
+  return () => {
+    window.removeEventListener(LANG_EVENT, callback)
+    window.removeEventListener('storage', callback)
+  }
+}
+
+function getSnapshot(): Lang {
+  const saved = localStorage.getItem(STORAGE_KEY)
+  return saved === 'en' || saved === 'es' ? saved : 'es'
+}
+
+// During SSR and the first hydration pass we always assume Spanish so the
+// server and client render the same markup; useSyncExternalStore switches to
+// the real stored value right after hydration.
+function getServerSnapshot(): Lang {
+  return 'es'
+}
+
+export function LanguageProvider({ children }: { children: ReactNode }) {
+  const lang = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
 
   function toggleLang() {
-    setLang((prev) => {
-      const next: Lang = prev === 'es' ? 'en' : 'es'
-      localStorage.setItem('moka-lang', next)
-      return next
-    })
+    const next: Lang = lang === 'es' ? 'en' : 'es'
+    localStorage.setItem(STORAGE_KEY, next)
+    window.dispatchEvent(new Event(LANG_EVENT))
   }
 
   return (

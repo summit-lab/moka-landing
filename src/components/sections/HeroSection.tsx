@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { SocialProofNumber } from '@/components/ui/SocialProofNumber'
 import { AnimateIn } from '@/components/ui/AnimateIn'
@@ -34,7 +35,7 @@ export function HeroSection() {
         </AnimateIn>
 
         <AnimateIn delay={150} className="mt-10 flex flex-col items-center gap-4">
-          <a
+          <Link
             href="/demo"
             className="btn-cta rounded-xl px-8 py-4 text-base font-bold text-white"
             style={{ fontFamily: 'Archivo', background: '#3b1f05' }}
@@ -43,7 +44,7 @@ export function HeroSection() {
               <span className="btn-label">{t.cta.primary}</span>
               <span className="btn-label-clone" aria-hidden="true">{t.cta.primary}</span>
             </span>
-          </a>
+          </Link>
           <p
             className="flex items-center text-sm font-light"
             style={{ fontFamily: 'Archivo', color: '#3b1f05' }}

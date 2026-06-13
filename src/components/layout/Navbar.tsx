@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 export function Navbar() {
@@ -46,7 +47,7 @@ export function Navbar() {
         >
           <Link href="/" className="flex items-center gap-2" style={{ color: '#1a0a00' }}>
             <span className="moka-wave">
-              <img src="/moka-logo.svg" alt="Moka" width={44} height={44} />
+              <Image src="/moka-logo.svg" alt="Moka" width={44} height={44} />
             </span>
             <span
               className="text-2xl tracking-tight"
@@ -114,7 +115,7 @@ export function Navbar() {
             >
               {t.cta.secondary}
             </a>
-            <a
+            <Link
               href="/demo"
               className="btn-cta rounded-xl px-5 py-2 text-sm font-bold text-white"
               style={{ fontFamily: 'Archivo', background: '#3b1f05' }}
@@ -123,7 +124,7 @@ export function Navbar() {
                 <span className="btn-label">{t.cta.nav}</span>
                 <span className="btn-label-clone" aria-hidden="true">{t.cta.nav}</span>
               </span>
-            </a>
+            </Link>
           </div>
         </nav>
       </div>

@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 export function Footer() {
@@ -12,7 +13,7 @@ export function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-4 py-12 md:flex-row">
         <Link href="/" className="flex items-center gap-3">
           <span className="moka-wave">
-            <img src="/moka-logo.svg" alt="Moka" width={52} height={52} />
+            <Image src="/moka-logo.svg" alt="Moka" width={52} height={52} />
           </span>
           <span
             className="text-3xl font-black tracking-tight"
@@ -42,10 +43,13 @@ export function Footer() {
 
       {/* Footer image — full width, shows completely */}
       <div className="w-full">
-        <img
+        <Image
           src="/moka-footer.png"
           alt=""
-          className="w-full block"
+          width={2172}
+          height={724}
+          sizes="100vw"
+          className="w-full h-auto block"
         />
       </div>
     </footer>
